@@ -54,7 +54,7 @@ public class KaryawanController {
     public String addKaryawan(Model model,
                               @ModelAttribute("karyawan") Karyawan karyawan) {
         try {
-            System.out.println("nilai karyawan karyawan=" + karyawan.getNama());
+            System.out.println("nilai karyawan="+ karyawan.getNama());
             Karyawan newKaryawan = karyawanService.save(karyawan);
             return "redirect:/v1/view/karyawan/" + String.valueOf(newKaryawan.getId());
         } catch (Exception ex) {

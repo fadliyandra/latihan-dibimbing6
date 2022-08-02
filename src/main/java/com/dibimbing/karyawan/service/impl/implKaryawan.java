@@ -13,8 +13,12 @@ public class implKaryawan implements KaryawanService {
     static List<Karyawan> listKaryawan = new ArrayList<>();
     @Override
     public Karyawan save(Karyawan obj) {
-        obj.setId(1L);
+        long num =(long) (Math.random()*50+1);
+        obj.setId(num);
         listKaryawan.add(obj);
+        System.out.println(obj.getId());
+//        obj.setId(1L);
+//        listKaryawan.add(obj);
         return obj;
     }
 
@@ -23,12 +27,12 @@ public class implKaryawan implements KaryawanService {
         for(Karyawan data : listKaryawan){
             if(obj.getId() == data.getId()){
                 Karyawan update = new Karyawan();
-                update.setId(data.getId());
-                update.setNama(data.getNama());
-                update.setJk(data.getJk());
-                update.setDob(data.getDob());
-                update.setAlamat(data.getAlamat());
-                update.setStatus(data.getStatus());
+                update.setId(obj.getId());
+                update.setNama(obj.getNama());
+                update.setJk(obj.getJk());
+                update.setDob(obj.getDob());
+                update.setAlamat(obj.getAlamat());
+                update.setStatus(obj.getStatus());
                 listKaryawan.remove(data);
                 listKaryawan.add(update);
                 return update;
