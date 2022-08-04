@@ -1,6 +1,7 @@
 package com.dibimbing.karyawan.controller;
 
 import com.dibimbing.karyawan.model.Karyawan;
+import com.dibimbing.karyawan.service.KaryawanServiceStatic;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,10 +11,10 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/v1/view/karyawan")
-public class KaryawanController {
+public class KaryawanControllerStatic {
 
     @Autowired
-    public com.dibimbing.karyawan.service.KaryawanService karyawanService;
+    public KaryawanServiceStatic karyawanService;
 
     private final int ROW_PER_PAGE = 5;
 

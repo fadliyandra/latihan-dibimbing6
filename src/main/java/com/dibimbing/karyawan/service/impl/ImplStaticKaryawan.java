@@ -1,7 +1,7 @@
 package com.dibimbing.karyawan.service.impl;
 
 import com.dibimbing.karyawan.model.Karyawan;
-import com.dibimbing.karyawan.service.KaryawanService;
+import com.dibimbing.karyawan.service.KaryawanServiceStatic;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -9,16 +9,16 @@ import java.util.List;
 
 
 @Service
-public class implKaryawan implements KaryawanService {
+public class ImplStaticKaryawan implements KaryawanServiceStatic {
     static List<Karyawan> listKaryawan = new ArrayList<>();
     @Override
     public Karyawan save(Karyawan obj) {
-        long num =(long) (Math.random()*50+1);
-        obj.setId(num);
+//        long id =(long) (Math.random() * 50 + 1);
+//        obj.setId(id);
         listKaryawan.add(obj);
-        System.out.println(obj.getId());
-//        obj.setId(1L);
-//        listKaryawan.add(obj);
+      //  System.out.println(obj.getId());
+        obj.setId(1L);
+        listKaryawan.add(obj);
         return obj;
     }
 
